@@ -1,0 +1,20 @@
+name: Optic CI Runner
+
+on: [ pull_request ]
+
+jobs:
+  optic-ci:
+    name: Breaking Changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run Optic CLI
+        uses: opticdev/optic-ci-starter@with-changelog
+        with:
+          file: api.github.com.gists.yaml
+          ruleset: default
+          optic_token: ${{ secrets.OPTIC_CI_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
