@@ -1673,6 +1673,7 @@ components:
       name: page
       description: Page number of the results to fetch.
       in: query
+      required: true
       schema:
         type: integer
         default: 1
