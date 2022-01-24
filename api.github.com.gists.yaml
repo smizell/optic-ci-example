@@ -100,6 +100,9 @@ paths:
       - "$ref": "#/components/parameters/since"
       - "$ref": "#/components/parameters/per-page"
       - "$ref": "#/components/parameters/page"
+      - in: query
+        name: hello
+        required: true
       responses:
         '200':
           description: Response
